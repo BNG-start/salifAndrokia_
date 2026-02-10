@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéo "Nous Deux"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-image: url('background.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Ajuster la taille de la vidéo pour les mobiles */
+        .video-container video {
+            width: 100%; /* Prendre toute la largeur de l'écran */
+            height: 100%;
+            max-width: 100%; /* Limite à 100% de la largeur */
+            aspect-ratio: 16 / 9; /* Maintenir un ratio 16:9 */
+            border-radius: 10px;
+        }
+
+        .audio-player {
+            margin-top: 20px;
+        }
+
+        .audio-player audio {
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        /* Cœur animé en bas de la page */
+        .heart {
+            font-size: 50px;
+            color: red;
+            text-align: center;
+            animation: heartbeat 1s infinite;
+            background-color: transparent;
+            border: none;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Pour les petits écrans comme les téléphones */
+        @media (max-width: 768px) {
+            .video-container video {
+                max-width: 90%; /* Ajuste la largeur à 90% sur les petits écrans */
+            }
+
+            .audio-player audio {
+                width: 90%; /* Rendre l'audio un peu plus large sur les petits écrans */
+            }
+
+            .heart {
+                font-size: 40px; /* Réduire la taille du cœur sur mobile */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Vidéo qui démarre automatiquement et se joue en boucle -->
+        <div class="video-container">
+            <video id="video" autoplay loop controls>
+                <source src="videocouple.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la lecture de vidéos.
+            </video>
+        </div>
+
+        <!-- Audio qui démarre en même temps que la vidéo -->
+        <div class="audio-player">
+            <audio autoplay loop>
+                <source src="videocouple.mp3" type="audio/mp3">
+                Votre navigateur ne prend pas en charge la lecture de fichiers audio.
+            </audio>
+        </div>
+
+        <!-- Cœur animé -->
+        <div class="heart">
+            <span>&#10084;</span>
+        </div>
+    </div>
+</body>
+</html>

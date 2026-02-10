@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-image: url('background.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gif-container1 {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;  /* Centrer le GIF */
+    width: 90%;
+}
+
+.gif-container {
+    width: 35%; 
+    display: flex;
+    justify-content: center; /* Réduire la taille du GIF à 15% de la largeur de l'écran */
+}
+
+.question p {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.buttons button {
+    margin: 20px;
+    padding: 20px 40px;  /* Taille des boutons "Oui" et "Non" plus grande */
+    font-size: 36px;  /* Augmenter la taille du texte des boutons */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    border: none;
+}
+
+#oui {
+    background-color: green;
+    color: white;
+}
+
+#non {
+    background-color: red;
+    color: white;
+}
+
+.buttons button:hover {
+    transform: scale(1.15);  /* Agrandissement au survol */
+}
+
+/* Ajout de la transition pour faire disparaître "Tchiiiip" */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;  /* Transition fluide pour l'opacity */
+}
+
+.poem {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.heart {
+    font-size: 50px;
+    color: red;
+    text-align: center;
+    animation: heartbeat 1s infinite;
+    background-color: none;  /* Supprimer l'arrière-plan blanc du cœur */
+    border: none;  /* Supprimer les bords si présents */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Nouveau style pour le bouton qui redirige vers video.html */
+.video-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;  /* Initialement invisible */
+    animation: fadeIn 1s forwards;  /* Animation d'apparition */
+}
+
+/* Animation pour faire apparaître le bouton */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);  /* Le bouton commence un peu en haut */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* Le bouton se place à sa position finale */
+    }
+}
+
+/* Effet au survol */
+.video-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
